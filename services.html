@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Afrilink Agency's services for international job placement, visa guidance, and career counseling.">
   <title>Services – Afrilink Agency</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
 </head>
 <body>
-
   <!-- ================= HEADER ================= -->
   <header>
     <div class="container">
-      <a href="index.html"><img src="images/afrilinklogo.jpg" alt="Afrilink Logo" style="height:50px;"></a>
+      <a href="index.html"><img src="images/afrilinklogo.jpg" alt="Afrilink Agency Logo" style="height:50px;" loading="lazy"></a>
+      <div class="menu-toggle">☰</div>
       <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -24,64 +28,57 @@
 
   <!-- ================= HERO ================= -->
   <section class="page-hero" style="background-image:url('images/jobservice.jpg');">
-    <div class="hero-overlay">
-      <h1>Our Services</h1>
-      <p>Connecting Kenyan talent with verified global opportunities</p>
-      <a href="contact.html" class="cta-btn">Start Application</a>
+    <div class="hero-overlay" data-aos="fade-up">
+      <h1 data-aos="fade-up" data-aos-delay="200">Our Services</h1>
+      <p data-aos="fade-up" data-aos-delay="400">Connecting Kenyan talent with verified global opportunities</p>
+      <a href="jobs.html" class="cta-btn" data-aos="zoom-in" data-aos-delay="600">Start Application</a>
     </div>
   </section>
 
   <!-- ================= SERVICES LIST ================= -->
-  <section class="fade-in">
+  <section data-aos="fade-up">
     <div class="container services-grid">
-      
-      <div class="service-card">
+      <div class="service-card" data-aos="fade-right" data-aos-delay="100">
         <h3>International Job Placement</h3>
         <p>
           We match skilled Kenyans with reputable employers in Canada, Qatar, Dubai,
           Saudi Arabia, Europe, and beyond.
         </p>
       </div>
-
-      <div class="service-card">
+      <div class="service-card" data-aos="fade-right" data-aos-delay="200">
         <h3>Visa & Documentation Guidance</h3>
         <p>
           Our team assists with visa processing, work permits, and
           documentation to ensure a smooth journey.
         </p>
       </div>
-
-      <div class="service-card">
+      <div class="service-card" data-aos="fade-right" data-aos-delay="300">
         <h3>Pre-Departure Orientation</h3>
         <p>
           Receive essential cultural and workplace training before traveling abroad.
         </p>
       </div>
-
-      <div class="service-card">
+      <div class="service-card" data-aos="fade-right" data-aos-delay="400">
         <h3>Career Counseling</h3>
         <p>
           We help candidates identify suitable careers that align with their skills and aspirations.
         </p>
       </div>
-
-      <div class="service-card">
+      <div class="service-card" data-aos="fade-right" data-aos-delay="500">
         <h3>Employer Verification</h3>
         <p>
           We partner only with vetted employers to guarantee safe and legal employment opportunities.
         </p>
       </div>
-
     </div>
-
     <div style="text-align:center; margin-top:30px;">
-      <a href="jobs.html" class="cta-btn">Browse Available Jobs</a>
+      <a href="jobs.html" class="cta-btn" data-aos="zoom-in" data-aos-delay="600">Browse Available Jobs</a>
     </div>
   </section>
 
   <!-- ================= FOOTER ================= -->
   <footer>
-    <p>&copy; 2025 Afrilink Agency. Kenya to the world, one career at a time.</p>
+    <p>&copy; 2024 Afrilink Agency. Kenya to the world, one career at a time.</p>
   </footer>
 
   <script src="script.js"></script>
