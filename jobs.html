@@ -3,89 +3,148 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore job opportunities abroad with Afrilink Agency in Canada, Qatar, Dubai, and more. Apply now!">
   <title>Jobs – Afrilink Agency</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "JobPosting",
+      "title": "Caregivers – Canada",
+      "description": "Exciting caregiver roles with verified employers in Canada."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "JobPosting",
+      "title": "Hospitality Staff – Qatar",
+      "description": "Join luxury hotels and restaurants in Doha and beyond."
+    }
+  ]
+  </script>
 </head>
 <body>
-
   <!-- ================= HEADER ================= -->
   <header>
     <div class="container">
-      <a href="index.html"><img src="images/afrilinklogo.jpg" alt="Afrilink Logo" style="height:50px;"></a>
+      <a href="index.html"><img src="images/afrilinklogo.jpg" alt="Afrilink Agency Logo" style="height:50px;" loading="lazy"></a>
+      <div class="menu-toggle">☰</div>
       <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="jobs.html" class="active">Jobs</a>
-        <a href="contact.html" class="cta-btn">Apply Now</a>
+        <a href="contact.html" class="cta-btn">Contact Us</a>
       </nav>
     </div>
   </header>
 
   <!-- ================= HERO ================= -->
   <section class="page-hero" style="background-image:url('images/jobeurope.jpg');">
-    <div class="hero-overlay">
-      <h1>Available Jobs</h1>
-      <p>Kenyan talent meets global opportunities</p>
-      <a href="contact.html" class="cta-btn">Submit Your Application</a>
+    <div class="hero-overlay" data-aos="fade-up">
+      <h1 data-aos="fade-up" data-aos-delay="200">Available Jobs</h1>
+      <p data-aos="fade-up" data-aos-delay="400">Kenyan talent meets global opportunities</p>
+      <a href="#jobs-grid" class="cta-btn" data-aos="zoom-in" data-aos-delay="600">View Jobs</a>
+    </div>
+  </section>
+
+  <!-- ================= JOB FILTER ================= -->
+  <section data-aos="fade-up">
+    <div class="container">
+      <h2>Find Your Opportunity</h2>
+      <select id="job-filter" data-aos="fade-right" data-aos-delay="100">
+        <option value="all">All Jobs</option>
+        <option value="Caregivers">Caregivers</option>
+        <option value="Supermarket Attendants">Supermarket Attendants</option>
+        <option value="Drivers and Riders">Drivers and Riders</option>
+        <option value="Security Guards">Security Guards</option>
+        <option value="Cleaners">Cleaners</option>
+        <option value="Waiters & Waitresses">Waiters & Waitresses</option>
+        <option value="Canada">Canada</option>
+        <option value="Qatar">Qatar</option>
+        <option value="Dubai">Dubai</option>
+        <option value="Saudi Arabia">Saudi Arabia</option>
+        <option value="Europe">Europe</option>
+      </select>
     </div>
   </section>
 
   <!-- ================= JOB LISTINGS ================= -->
-  <section class="fade-in">
-    <div class="container jobs-grid">
-
-      <div class="job-card">
-        <img src="images/jobcanada.jpg" alt="Canada">
+  <section data-aos="fade-up">
+    <div class="container jobs-grid" id="jobs-grid">
+      <div class="job-card" data-job="Caregivers" data-country="Canada" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/jobcanada.jpg" alt="Caregiver job in Canada" loading="lazy">
         <div class="content">
-          <h3>Caregivers – Canada</h3>
-          <p>Salary: KES 250,000+ / month<br>Benefits: Accommodation & Health Insurance</p>
-          <button class="apply-btn" data-job="Caregivers – Canada">Apply Now</button>
+          <h3 data-aos="fade-right" data-aos-delay="200">Caregivers – Canada</h3>
+          <p data-aos="fade-right" data-aos-delay="300">Salary: KES 250,000+ / month<br>Benefits: Accommodation & Health Insurance</p>
+          <button class="apply-btn" data-job="Caregivers – Canada" data-aos="zoom-in" data-aos-delay="400">Apply Now</button>
         </div>
       </div>
-
-      <div class="job-card">
-        <img src="images/jobqatar.jpg" alt="Qatar">
+      <div class="job-card" data-job="Hospitality Staff" data-country="Qatar" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/jobqatar.jpg" alt="Hospitality job in Qatar" loading="lazy">
         <div class="content">
-          <h3>Hospitality Staff – Qatar</h3>
-          <p>Salary: KES 120,000+ / month<br>Positions: Waiters, Chefs, Receptionists</p>
-          <button class="apply-btn" data-job="Hospitality Staff – Qatar">Apply Now</button>
+          <h3 data-aos="fade-right" data-aos-delay="300">Hospitality Staff – Qatar</h3>
+          <p data-aos="fade-right" data-aos-delay="400">Salary: KES 120,000+ / month<br>Positions: Waiters, Chefs, Receptionists</p>
+          <button class="apply-btn" data-job="Hospitality Staff – Qatar" data-aos="zoom-in" data-aos-delay="500">Apply Now</button>
         </div>
       </div>
-
-      <div class="job-card">
-        <img src="images/jobdubai.jpg" alt="Dubai">
+      <div class="job-card" data-job="Construction Workers" data-country="Dubai" data-aos="fade-up" data-aos-delay="300">
+        <img src="images/jobdubai.jpg" alt="Construction job in Dubai" loading="lazy">
         <div class="content">
-          <h3>Construction Workers – Dubai</h3>
-          <p>Salary: KES 90,000+ / month<br>Roles: Mason, Electrician, Plumber</p>
-          <button class="apply-btn" data-job="Construction Workers – Dubai">Apply Now</button>
+          <h3 data-aos="fade-right" data-aos-delay="400">Construction Workers – Dubai</h3>
+          <p data-aos="fade-right" data-aos-delay="500">Salary: KES 90,000+ / month<br>Roles: Mason, Electrician, Plumber</p>
+          <button class="apply-btn" data-job="Construction Workers – Dubai" data-aos="zoom-in" data-aos-delay="600">Apply Now</button>
         </div>
       </div>
-
-      <div class="job-card">
-        <img src="images/jobsaudi.jpg" alt="Saudi Arabia">
+      <div class="job-card" data-job="Supermarket Attendants" data-country="Saudi Arabia" data-aos="fade-up" data-aos-delay="400">
+        <img src="images/jobsaudi.jpg" alt="Supermarket job in Saudi Arabia" loading="lazy">
         <div class="content">
-          <h3>Domestic Workers – Saudi Arabia</h3>
-          <p>Salary: KES 70,000+ / month<br>Benefits: Free Food & Accommodation</p>
-          <button class="apply-btn" data-job="Domestic Workers – Saudi Arabia">Apply Now</button>
+          <h3 data-aos="fade-right" data-aos-delay="500">Supermarket Attendants – Saudi Arabia</h3>
+          <p data-aos="fade-right" data-aos-delay="600">Salary: KES 80,000+ / month<br>Benefits: Free Food & Accommodation</p>
+          <button class="apply-btn" data-job="Supermarket Attendants – Saudi Arabia" data-aos="zoom-in" data-aos-delay="700">Apply Now</button>
         </div>
       </div>
-
-      <div class="job-card">
-        <img src="images/jobeurope.jpg" alt="Europe">
+      <div class="job-card" data-job="Drivers and Riders" data-country="Europe" data-aos="fade-up" data-aos-delay="500">
+        <img src="images/jobeurope.jpg" alt="Driver job in Europe" loading="lazy">
         <div class="content">
-          <h3>Farm Workers – Europe</h3>
-          <p>Salary: KES 150,000+ / month<br>Countries: Germany, Netherlands, France</p>
-          <button class="apply-btn" data-job="Farm Workers – Europe">Apply Now</button>
+          <h3 data-aos="fade-right" data-aos-delay="600">Drivers and Riders – Europe</h3>
+          <p data-aos="fade-right" data-aos-delay="700">Salary: KES 140,000+ / month<br>Countries: Germany, Netherlands</p>
+          <button class="apply-btn" data-job="Drivers and Riders – Europe" data-aos="zoom-in" data-aos-delay="800">Apply Now</button>
         </div>
       </div>
-
+      <div class="job-card" data-job="Security Guards" data-country="Qatar" data-aos="fade-up" data-aos-delay="600">
+        <img src="images/jobqatar.jpg" alt="Security job in Qatar" loading="lazy">
+        <div class="content">
+          <h3 data-aos="fade-right" data-aos-delay="700">Security Guards – Qatar</h3>
+          <p data-aos="fade-right" data-aos-delay="800">Salary: KES 100,000+ / month<br>Benefits: Training & Uniforms</p>
+          <button class="apply-btn" data-job="Security Guards – Qatar" data-aos="zoom-in" data-aos-delay="900">Apply Now</button>
+        </div>
+      </div>
+      <div class="job-card" data-job="Cleaners" data-country="Dubai" data-aos="fade-up" data-aos-delay="700">
+        <img src="images/jobdubai.jpg" alt="Cleaner job in Dubai" loading="lazy">
+        <div class="content">
+          <h3 data-aos="fade-right" data-aos-delay="800">Cleaners – Dubai</h3>
+          <p data-aos="fade-right" data-aos-delay="900">Salary: KES 85,000+ / month<br>Benefits: Accommodation Provided</p>
+          <button class="apply-btn" data-job="Cleaners – Dubai" data-aos="zoom-in" data-aos-delay="1000">Apply Now</button>
+        </div>
+      </div>
+      <div class="job-card" data-job="Waiters & Waitresses" data-country="Canada" data-aos="fade-up" data-aos-delay="800">
+        <img src="images/jobcanada.jpg" alt="Waiter job in Canada" loading="lazy">
+        <div class="content">
+          <h3 data-aos="fade-right" data-aos-delay="900">Waiters & Waitresses – Canada</h3>
+          <p data-aos="fade-right" data-aos-delay="1000">Salary: KES 200,000+ / month<br>Benefits: Health Insurance</p>
+          <button class="apply-btn" data-job="Waiters & Waitresses – Canada" data-aos="zoom-in" data-aos-delay="1100">Apply Now</button>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ================= FOOTER ================= -->
   <footer>
-    <p>&copy; 2025 Afrilink Agency. Kenya to the world, one career at a time.</p>
+    <p>&copy; 2024 Afrilink Agency. Kenya to the world, one career at a time.</p>
   </footer>
 
   <script src="script.js"></script>
