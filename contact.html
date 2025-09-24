@@ -3,59 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Afrilink Agency to start your journey to global job opportunities.">
   <title>Contact – Afrilink Agency</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
 </head>
 <body>
-
   <!-- ================= HEADER ================= -->
   <header>
     <div class="container">
-      <a href="index.html"><img src="images/afrilinklogo.jpg" alt="Afrilink Logo" style="height:50px;"></a>
+      <a href="index.html"><img src="images/afrilinklogo.jpg" alt="Afrilink Agency Logo" style="height:50px;" loading="lazy"></a>
+      <div class="menu-toggle">☰</div>
       <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="jobs.html">Jobs</a>
-        <a href="contact.html" class="cta-btn active">Apply Now</a>
+        <a href="contact.html" class="cta-btn active">Contact Us</a>
       </nav>
     </div>
   </header>
 
   <!-- ================= HERO ================= -->
   <section class="page-hero" style="background-image:url('images/jobhero1.jpg');">
-    <div class="hero-overlay">
-      <h1>Contact Us</h1>
-      <p>Kenya to the world, one career at a time</p>
-      <a href="#contact-form" class="cta-btn">Apply Now</a>
+    <div class="hero-overlay" data-aos="fade-up">
+      <h1 data-aos="fade-up" data-aos-delay="200">Contact Us</h1>
+      <p data-aos="fade-up" data-aos-delay="400">Kenya to the world, one career at a time</p>
+      <a href="#contact-form" class="cta-btn" data-aos="zoom-in" data-aos-delay="600">Get in Touch</a>
     </div>
   </section>
 
   <!-- ================= CONTACT INFO ================= -->
-  <section class="fade-in">
+  <section data-aos="fade-up">
     <div class="container contact-info">
-      <div class="info-box">
+      <div class="info-box" data-aos="fade-right" data-aos-delay="100">
         <h2>Get in Touch</h2>
         <p>Email: <a href="mailto:afreachcreatives@gmail.com">afreachcreatives@gmail.com</a></p>
         <p>Phone: <a href="tel:+254707614590">+254 707 614 590</a></p>
-
         <div class="social-icons">
-          <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="javascript:alert('Coming Soon')" data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-facebook-f"></i></a>
+          <a href="javascript:alert('Coming Soon')" data-aos="zoom-in" data-aos-delay="300"><i class="fab fa-twitter"></i></a>
+          <a href="javascript:alert('Coming Soon')" data-aos="zoom-in" data-aos-delay="400"><i class="fab fa-instagram"></i></a>
+          <a href="javascript:alert('Coming Soon')" data-aos="zoom-in" data-aos-delay="500"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
 
-      <div class="form-box" id="contact-form">
-        <h2>Send Your Application</h2>
+      <div class="form-box" id="contact-form" data-aos="fade-right" data-aos-delay="200">
+        <h2>Send Us a Message</h2>
         <form action="https://formspree.io/f/mjkedvkg" method="POST">
-          <input type="text" name="name" placeholder="Full Name" required>
-          <input type="email" name="email" placeholder="Email Address" required>
-          <input type="text" name="phone" placeholder="Phone Number" required>
-          <textarea name="message" rows="5" placeholder="Tell us about the job you're applying for..." required></textarea>
-          <button type="submit" class="cta-btn">Submit Application</button>
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Full Name" required>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Email Address" required>
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us how we can assist you..." required></textarea>
+          <label for="cv">Upload CV (PDF)</label>
+          <input type="file" id="cv" name="cv" accept=".pdf">
+          <button type="submit" class="cta-btn" data-aos="zoom-in" data-aos-delay="300">Submit Message</button>
         </form>
       </div>
     </div>
@@ -63,7 +72,7 @@
 
   <!-- ================= FOOTER ================= -->
   <footer>
-    <p>&copy; 2025 Afrilink Agency. Kenya to the world, one career at a time.</p>
+    <p>&copy; 2024 Afrilink Agency. Kenya to the world, one career at a time.</p>
   </footer>
 
   <script src="script.js"></script>
