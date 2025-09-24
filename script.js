@@ -1,133 +1,114 @@
-// Hamburger Menu Toggle
-document.querySelector('.menu-toggle').addEventListener('click', () => {
+// ================= HAMBURGER MENU TOGGLE =================
+document.querySelector('.menu-toggle').addEventListener('click', function() {
   document.querySelector('nav').classList.toggle('active');
 });
 
-// Modal Form Logic
-const applyButtons = document.querySelectorAll('.apply-btn');
-const modal = document.createElement('div');
-modal.className = 'modal';
-modal.setAttribute('aria-modal', 'true');
-modal.setAttribute('role', 'dialog');
-modal.innerHTML = `
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <h2>Apply for a Job</h2>
-    <form id="apply-form" action="https://formspree.io/f/mjkedvkg" method="POST" enctype="multipart/form-data">
-      <label for="modal-name">Full Name</label>
-      <input type="text" id="modal-name" name="name" placeholder="Full Name" required>
-      <label for="modal-email">Email Address</label>
-      <input type="email" id="modal-email" name="email" placeholder="Email Address" required>
-      <label for="modal-phone">Phone Number</label>
-      <input type="text" id="modal-phone" name="phone" placeholder="Phone Number" required>
-      <label for="modal-job">Job Role</label>
-      <select id="modal-job" name="job" required>
-        <option value="" disabled selected>Select Job Role</option>
-        <option value="Caregivers">Caregivers</option>
-        <option value="Supermarket Attendants">Supermarket Attendants</option>
-        <option value="Drivers and Riders">Drivers and Riders</option>
-        <option value="Security Guards">Security Guards</option>
-        <option value="Cleaners">Cleaners</option>
-        <option value="Waiters & Waitresses">Waiters & Waitresses</option>
-      </select>
-      <label for="modal-country">Country</label>
-      <select id="modal-country" name="country" required>
-        <option value="" disabled selected>Select Country</option>
-        <option value="Canada">Canada</option>
-        <option value="Qatar">Qatar</option>
-        <option value="Dubai">Dubai</option>
-        <option value="Saudi Arabia">Saudi Arabia</option>
-        <option value="Europe">Europe</option>
-      </select>
-      <label for="modal-message">Message</label>
-      <textarea id="modal-message" name="message" rows="5" placeholder="Tell us about your interest..." required></textarea>
-      <label for="modal-cv">Upload CV (PDF)</label>
-      <input type="file" id="modal-cv" name="cv" accept=".pdf">
-      <button type="submit" class="cta-btn">Submit Application</button>
-    </form>
-  </div>
-`;
-document.body.appendChild(modal);
+// ================= JOB FILTER =================
+document.getElementById('job-filter')?.addEventListener('change', function() {
+  const filterValue = this.value;
+  const jobCards = document.querySelectorAll('.job-card');
 
-applyButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const job = button.getAttribute('data-job');
-    if (job) {
-      const [jobRole, country] = job.split(' – ');
-      document.getElementById('modal-job').value = jobRole || '';
-      document.getElementById('modal-country').value = country || '';
-      document.getElementById('modal-message').value = `Applying for: ${job}`;
-    }
-    modal.style.display = 'flex';
-    document.getElementById('modal-name').focus(); // Focus trap for accessibility
-  });
-});
-
-document.querySelector('.close-btn').addEventListener('click', () => {
-  modal.style.display = 'none';
-});
-
-// Close modal on outside click
-modal.addEventListener('click', e => {
-  if (e.target === modal) {
-    modal.style.display = 'none';
-  }
-});
-
-// Form Validation (Modal and Contact Form)
-function validateForm(form) {
-  const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
-  let valid = true;
-  inputs.forEach(input => {
-    if (!input.value.trim()) {
-      valid = false;
-      input.style.borderColor = 'red';
+  jobCards.forEach(card => {
+    if (filterValue === 'all') {
+      card.style.display = 'block';
     } else {
-      input.style.borderColor = '#ccc';
-    }
-    if (input.type === 'email' && input.value) {
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailPattern.test(input.value)) {
-        valid = false;
-        input.style.borderColor = 'red';
-      }
-    }
-  });
-  return valid;
-}
-
-document.getElementById('apply-form').addEventListener('submit', e => {
-  if (!validateForm(e.target)) {
-    e.preventDefault();
-    alert('Please fill all required fields correctly.');
-  }
-});
-
-// Contact Form Validation
-const contactForm = document.querySelector('.form-box form');
-if (contactForm) {
-  contactForm.addEventListener('submit', e => {
-    if (!validateForm(e.target)) {
-      e.preventDefault();
-      alert('Please fill all required fields correctly.');
-    }
-  });
-}
-
-// Job Filter Logic
-const jobFilter = document.getElementById('job-filter');
-if (jobFilter) {
-  jobFilter.addEventListener('change', e => {
-    const filterValue = e.target.value;
-    const jobCards = document.querySelectorAll('.job-card');
-    jobCards.forEach(card => {
-      const job = card.getAttribute('data-job');
-      const country = card.getAttribute('data-country');
-      if (filterValue === 'all' || job === filterValue || country === filterValue) {
+      const cardJob = card.getAttribute('data-job');
+      const cardCountry = card.getAttribute('data-country');
+      if (cardJob === filterValue || cardCountry === filterValue) {
         card.style.display = 'block';
       } else {
         card.style.display = 'none';
       }
+    }
+  });
+});
+
+// ================= MODAL FUNCTIONALITY =================
+document.querySelectorAll('.apply-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    const job = this.getAttribute('data-job');
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.innerHTML = `
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Apply for ${job}</h2>
+        <form action="https://formspree.io/f/mjkedvkg" method="POST">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" required>
+          <label for="job-role">Job Role *</label>
+          <select id="job-role" name="job-role" required>
+            <option value="" disabled selected>Select Job Role</option>
+            <option value="Caregivers" ${job.includes('Caregivers') ? 'selected' : ''}>Caregivers</option>
+            <option value="Supermarket Attendants" ${job.includes('Supermarket Attendants') ? 'selected' : ''}>Supermarket Attendants</option>
+            <option value="Drivers and Riders" ${job.includes('Drivers and Riders') ? 'selected' : ''}>Drivers and Riders</option>
+            <option value="Security Guards" ${job.includes('Security Guards') ? 'selected' : ''}>Security Guards</option>
+            <option value="Cleaners" ${job.includes('Cleaners') ? 'selected' : ''}>Cleaners</option>
+            <option value="Waiters & Waitresses" ${job.includes('Waiters & Waitresses') ? 'selected' : ''}>Waiters & Waitresses</option>
+            <option value="Hospitality Staff" ${job.includes('Hospitality Staff') ? 'selected' : ''}>Hospitality Staff</option>
+            <option value="Construction Workers" ${job.includes('Construction Workers') ? 'selected' : ''}>Construction Workers</option>
+            <option value="General Application" ${job === 'General Application' ? 'selected' : ''}>General Application</option>
+          </select>
+          <label for="country">Country *</label>
+          <select id="country" name="country" required>
+            <option value="" disabled selected>Select Country</option>
+            <option value="Canada" ${job.includes('Canada') ? 'selected' : ''}>Canada</option>
+            <option value="Qatar" ${job.includes('Qatar') ? 'selected' : ''}>Qatar</option>
+            <option value="Dubai" ${job.includes('Dubai') ? 'selected' : ''}>Dubai</option>
+            <option value="Saudi Arabia" ${job.includes('Saudi Arabia') ? 'selected' : ''}>Saudi Arabia</option>
+            <option value="Europe" ${job.includes('Europe') ? 'selected' : ''}>Europe</option>
+          </select>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+          <label for="cv">Upload CV (PDF)</label>
+          <input type="file" id="cv" name="cv" accept=".pdf">
+          <button type="submit">Submit Application</button>
+        </form>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    const closeBtn = modal.querySelector('.close');
+    closeBtn.addEventListener('click', function() {
+      modal.remove();
+    });
+
+    window.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.remove();
+      }
+    });
+
+    const form = modal.querySelector('form');
+    form.addEventListener('submit', function(e) {
+      const requiredFields = form.querySelectorAll('[required]');
+      let isValid = true;
+      requiredFields.forEach(field => {
+        if (!field.value) {
+          isValid = false;
+          field.style.borderColor = 'red';
+        } else {
+          field.style.borderColor = '#ddd';
+        }
+      });
+      if (!isValid) {
+        e.preventDefault();
+        alert('Please fill all required fields.');
+      }
     });
   });
-}
+});
+
+// ================= SMOOTH SCROLL FOR CTAs =================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
