@@ -3,17 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Afrilink Agency connects Kenyan talent with global jobs in Canada, Qatar, and more. Apply now!">
   <title>Afrilink Agency – Kenya to the world, one career at a time</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
 </head>
 <body>
-
   <!-- ================= HEADER ================= -->
   <header>
     <div class="container">
-      <a href="index.html"><img src="images/afrilinklogo.jpg" alt="Afrilink Logo" style="height:50px;"></a>
+      <a href="index.html"><img src="images/afrilinklogo.webp" alt="Afrilink Agency Logo" style="height:50px;" loading="lazy"></a>
+      <div class="menu-toggle">☰</div>
       <nav>
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="jobs.html">Jobs</a>
@@ -24,18 +28,18 @@
 
   <!-- ================= HERO SECTION ================= -->
   <section class="hero">
-    <img src="images/jobhero1.jpg" alt="Hero Image 1">
-    <img src="images/jobhero2.jpg" alt="Hero Image 2">
-    <img src="images/jobhero3.jpg" alt="Hero Image 3">
-    <div class="hero-text">
+    <img src="images/jobhero1.webp" alt="Caregiver working in Canada" loading="lazy">
+    <img src="images/jobhero2.webp" alt="Global career paths for Kenyan talent" loading="lazy">
+    <img src="images/jobhero3.webp" alt="Work abroad with Afrilink Agency" loading="lazy">
+    <div class="hero-text" data-aos="fade-up">
       <h1>Kenya to the world, one career at a time</h1>
       <p>Connecting Kenyan Talent with Global Opportunities</p>
-      <a href="jobs.html" class="cta-btn">Explore Jobs</a>
+      <a href="jobs.html" class="cta-btn" data-aos="zoom-in" data-aos-delay="200">Explore Jobs</a>
     </div>
   </section>
 
   <!-- ================= ABOUT PREVIEW ================= -->
-  <section class="fade-in">
+  <section data-aos="fade-up">
     <div class="container">
       <h2>About Afrilink Agency</h2>
       <p>
@@ -49,32 +53,32 @@
   </section>
 
   <!-- ================= JOB PREVIEW ================= -->
-  <section class="fade-in">
+  <section data-aos="fade-up">
     <div class="container">
       <h2>Featured Job Destinations</h2>
       <div class="jobs-grid">
-        <div class="job-card">
-          <img src="images/jobcanada.jpg" alt="Canada">
+        <div class="job-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="images/jobcanada.webp" alt="Caregiver job in Canada" loading="lazy">
           <div class="content">
-            <h3>Caregivers – Canada</h3>
-            <p>Exciting caregiver roles with verified employers in Canada.</p>
-            <button class="apply-btn" data-job="Caregiver – Canada">Apply Now</button>
+            <h3 data-aos="fade-right" data-aos-delay="200">Caregivers – Canada</h3>
+            <p data-aos="fade-right" data-aos-delay="300">Exciting caregiver roles with verified employers in Canada.</p>
+            <button class="apply-btn" data-job="Caregivers – Canada" data-aos="zoom-in" data-aos-delay="400">Apply Now</button>
           </div>
         </div>
-        <div class="job-card">
-          <img src="images/jobqatar.jpg" alt="Qatar">
+        <div class="job-card" data-aos="fade-up" data-aos-delay="200">
+          <img src="images/jobqatar.webp" alt="Hospitality job in Qatar" loading="lazy">
           <div class="content">
-            <h3>Hospitality Staff – Qatar</h3>
-            <p>Join luxury hotels and restaurants in Doha and beyond.</p>
-            <button class="apply-btn" data-job="Hospitality Staff – Qatar">Apply Now</button>
+            <h3 data-aos="fade-right" data-aos-delay="300">Hospitality Staff – Qatar</h3>
+            <p data-aos="fade-right" data-aos-delay="400">Join luxury hotels and restaurants in Doha and beyond.</p>
+            <button class="apply-btn" data-job="Hospitality Staff – Qatar" data-aos="zoom-in" data-aos-delay="500">Apply Now</button>
           </div>
         </div>
-        <div class="job-card">
-          <img src="images/jobdubai.jpg" alt="Dubai">
+        <div class="job-card" data-aos="fade-up" data-aos-delay="300">
+          <img src="images/jobdubai.webp" alt="Construction job in Dubai" loading="lazy">
           <div class="content">
-            <h3>Construction Workers – Dubai</h3>
-            <p>Build your career in Dubai’s fast-growing construction industry.</p>
-            <button class="apply-btn" data-job="Construction Workers – Dubai">Apply Now</button>
+            <h3 data-aos="fade-right" data-aos-delay="400">Construction Workers – Dubai</h3>
+            <p data-aos="fade-right" data-aos-delay="500">Build your career in Dubai’s fast-growing construction industry.</p>
+            <button class="apply-btn" data-job="Construction Workers – Dubai" data-aos="zoom-in" data-aos-delay="600">Apply Now</button>
           </div>
         </div>
       </div>
@@ -84,9 +88,24 @@
     </div>
   </section>
 
+  <!-- ================= TESTIMONIALS ================= -->
+  <section data-aos="fade-up">
+    <div class="container">
+      <h2>Success Stories</h2>
+      <div class="jobs-grid">
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+          <p>"Afrilink got me a caregiver job in Canada!" – Jane, Nairobi</p>
+        </div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+          <p>"Smooth visa process for Qatar hospitality!" – Peter, Mombasa</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= FOOTER ================= -->
   <footer>
-    <p>&copy; 2025 Afrilink Agency. Kenya to the world, one career at a time.</p>
+    <p>&copy; 2024 Afrilink Agency. Kenya to the world, one career at a time.</p>
   </footer>
 
   <script src="script.js"></script>
