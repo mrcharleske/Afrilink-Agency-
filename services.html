@@ -1,86 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore Afrilink Agency's services for international job placement, visa guidance, and career counseling.">
-  <title>Services – Afrilink Agency</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ duration: 800, once: true });</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Afrilink Agency</title>
+    <meta name="description" content="Our services: Job placements, visa assistance, resume building, training, and interview prep for jobs abroad.">
+    <meta name="keywords" content="job services, visa help, resume Kenya">
+    <meta property="og:title" content="Services - Afrilink Agency">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- ================= HEADER ================= -->
-  <header>
-    <div class="container">
-      <a href="index.html"><img src="images/afrilinklogo.jpg" alt="Afrilink Agency Logo" style="height:50px;" loading="lazy"></a>
-      <div class="menu-toggle">☰</div>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html" class="active">Services</a>
-        <a href="jobs.html">Jobs</a>
-        <a href="contact.html" class="cta-btn">Apply Now</a>
-      </nav>
-    </div>
-  </header>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="images/afrilinklogo.jpg" alt="Afrilink Agency Logo" loading="lazy">
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- ================= HERO ================= -->
-  <section class="page-hero" style="background-image:url('images/jobservice.jpg');">
-    <div class="hero-overlay" data-aos="fade-up">
-      <h1 data-aos="fade-up" data-aos-delay="200">Our Services</h1>
-      <p data-aos="fade-up" data-aos-delay="400">Connecting Kenyan talent with verified global opportunities</p>
-      <a href="jobs.html" class="cta-btn" data-aos="zoom-in" data-aos-delay="600">Start Application</a>
-    </div>
-  </section>
+    <section data-aos="fade-up">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <img src="images/jobservice.jpg" alt="Job Placements" loading="lazy">
+                    <h3>Job Placements</h3>
+                    <p>We connect you with verified employers in high-demand sectors abroad.</p>
+                    <a href="jobs.html" class="btn">Learn More</a>
+                </div>
+                <div class="service-card" data-aos="fade-up">
+                    <h3>Visa and Passport Assistance</h3>
+                    <p>Expert guidance through applications, documentation, and approvals.</p>
+                    <a href="contact.html" class="btn">Get Started</a>
+                </div>
+                <div class="service-card" data-aos="fade-up">
+                    <h3>Resume Building</h3>
+                    <p>Craft standout resumes tailored to international standards.</p>
+                    <a href="contact.html" class="btn">Learn More</a>
+                </div>
+                <div class="service-card" data-aos="fade-up">
+                    <h3>Training</h3>
+                    <p>Skill-building workshops for roles like hospitality and construction.</p>
+                    <a href="contact.html" class="btn">Enroll Now</a>
+                </div>
+                <div class="service-card" data-aos="fade-up">
+                    <h3>Interview Prep</h3>
+                    <p>Mock interviews and tips to ace your global job interviews.</p>
+                    <a href="contact.html" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- ================= SERVICES LIST ================= -->
-  <section data-aos="fade-up">
-    <div class="container services-grid">
-      <div class="service-card" data-aos="fade-right" data-aos-delay="100">
-        <h3>International Job Placement</h3>
-        <p>
-          We match skilled Kenyans with reputable employers in Canada, Qatar, Dubai,
-          Saudi Arabia, Europe, and beyond.
-        </p>
-      </div>
-      <div class="service-card" data-aos="fade-right" data-aos-delay="200">
-        <h3>Visa & Documentation Guidance</h3>
-        <p>
-          Our team assists with visa processing, work permits, and
-          documentation to ensure a smooth journey.
-        </p>
-      </div>
-      <div class="service-card" data-aos="fade-right" data-aos-delay="300">
-        <h3>Pre-Departure Orientation</h3>
-        <p>
-          Receive essential cultural and workplace training before traveling abroad.
-        </p>
-      </div>
-      <div class="service-card" data-aos="fade-right" data-aos-delay="400">
-        <h3>Career Counseling</h3>
-        <p>
-          We help candidates identify suitable careers that align with their skills and aspirations.
-        </p>
-      </div>
-      <div class="service-card" data-aos="fade-right" data-aos-delay="500">
-        <h3>Employer Verification</h3>
-        <p>
-          We partner only with vetted employers to guarantee safe and legal employment opportunities.
-        </p>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top:30px;">
-      <a href="jobs.html" class="cta-btn" data-aos="zoom-in" data-aos-delay="600">Browse Available Jobs</a>
-    </div>
-  </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Afrilink Agency. All rights reserved. | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a></p>
+            <p>Contact: +254707614590 | <a href="https://wa.me/254707614590">WhatsApp</a></p>
+        </div>
+    </footer>
 
-  <!-- ================= FOOTER ================= -->
-  <footer>
-    <p>&copy; 2024 Afrilink Agency. Kenya to the world, one career at a time.</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
