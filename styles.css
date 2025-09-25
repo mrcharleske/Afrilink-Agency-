@@ -1,318 +1,209 @@
-/* Reset and Base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: #343A40;
-    background-color: #F8F9FA;
+    color: #333;
+    background: #F8F9FA;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Header */
-header {
+.navbar {
     background: #007BFF;
-    color: white;
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
+    padding: 10px 0;
+    position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navbar-brand img {
+    height: 40px;
 }
 
-.logo img {
-    height: 50px;
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
+.navbar-toggler-icon:hover {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23FFD700' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-nav ul li {
-    margin-left: 2rem;
-}
-
-nav ul li a {
+.navbar-nav .nav-link {
     color: white;
-    text-decoration: none;
-    transition: color 0.3s;
+    font-weight: 500;
 }
 
-nav ul li a:hover {
+.navbar-nav .nav-link:hover {
     color: #FFD700;
 }
 
-/* Hero Slider */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: #007BFF;
+        width: 80%;
+        margin: 0 auto;
+        border-radius: 5px;
+        padding: 10px;
+        position: absolute;
+        top: 60px;
+        left: 10%;
+        z-index: 999;
+    }
+    .navbar-nav {
+        text-align: center;
+    }
+    .navbar-nav .nav-link {
+        padding: 10px;
+    }
+}
+
 .hero {
     position: relative;
     height: 100vh;
-    background: url('images/jobhero1.jpg') no-repeat center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.carousel-item img {
+    height: 100vh;
+    object-fit: cover;
+}
+
+.hero-box {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
-    color: white;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+.hero-box h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+.hero-box p {
+    color: #333;
 }
 
-.btn {
+.hero-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn-explore {
     background: #FFD700;
     color: #007BFF;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    border-radius: 5px;
     font-weight: bold;
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: inline-block;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
 }
 
-.btn:hover {
+.btn-explore:hover {
+    background: #0056b3;
+    color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+.btn-contact {
+    background: #007BFF;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
 }
 
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-.slide.active {
-    opacity: 1;
-}
-
-.slide:nth-child(1) { background: url('images/jobhero1.jpg') no-repeat center/cover; }
-.slide:nth-child(2) { background: url('images/jobhero2.jpg') no-repeat center/cover; }
-.slide:nth-child(3) { background: url('images/jobhero3.jpg') no-repeat center/cover; }
-
-/* Sections */
-section {
-    padding: 5rem 0;
-}
-
-h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
+.btn-contact:hover {
+    background: #FFD700;
     color: #007BFF;
+    transform: translateY(-2px);
+}
+
+.section-padding {
+    padding: 60px 0;
 }
 
 .stats {
-    background: #F8F9FA;
-    text-align: center;
+    background: #f8f9fa;
 }
 
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-}
-
-.stat {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.stat h3 {
-    font-size: 3rem;
-    color: #FFD700;
-}
-
-/* Services Cards */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.service-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.service-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-}
-
-/* Jobs Page */
-.country-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.country-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.country-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.country-card h3 {
-    padding: 1rem;
+.stats h3 {
+    font-size: 2.5rem;
     color: #007BFF;
 }
 
-#jobsModal, #formModal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
+.service-card, .country-card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover, .country-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.service-card img, .country-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.contact-hero {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.contact-hero img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.contact-overlay {
+    position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
-}
-
-.modal-content {
-    background: white;
-    margin: 5% auto;
-    padding: 2rem;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 500px;
-    position: relative;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 2rem;
-    cursor: pointer;
-    color: #6C757D;
-}
-
-.job-list {
+    background: rgba(0, 123, 255, 0.8);
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    align-items: center;
     justify-content: center;
 }
 
-.job-btn {
+.btn-success {
+    background: #25D366;
+    border: none;
+}
+
+.btn-success:hover {
+    background: #1DA851;
+}
+
+footer {
     background: #007BFF;
     color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.job-btn:hover {
-    background: #FFD700;
-    color: #007BFF;
-}
-
-/* Forms */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-input, textarea {
-    padding: 1rem;
-    border: 1px solid #6C757D;
-    border-radius: 5px;
-}
-
-.whatsapp-btn {
-    background: #25D366;
-    color: white;
-    border: none;
-    padding: 1rem;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 1rem;
-}
-
-/* Footer */
-footer {
-    background: #343A40;
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
+    padding: 20px 0;
 }
 
 footer a {
     color: #FFD700;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-}
-
-/* AOS Overrides */
 [data-aos] {
-    opacity: 0;
-    transition: opacity 0.5s, transform 0.5s;
+    transition-duration: 1s;
 }
 
-[data-aos].aos-animate {
-    opacity: 1;
-    transform: translateY(0);
+@media (max-width: 768px) {
+    .hero-box h1 {
+        font-size: 1.8rem;
+    }
+    .hero-box {
+        padding: 15px;
+    }
+    .carousel-item img {
+        height: 80vh;
+    }
 }
